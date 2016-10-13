@@ -1,0 +1,25 @@
+<div>
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Lista Devices Trovati</h4>
+  <button [ngClass]="cssBottoneGenerico" data-toggle="tooltip"
+            data-placement="bottom"
+            title="Avvia comando send Discovery" (click)="sendDiscovery()">Send Discovery</button></li>
+  <li *ngFor="let device of Devices" class="collection-item avatar pulse animated">
+    <img  [src]="device.imageSource" alt="" class="circle">
+    <span class="title">{{device.Tipologia}}</span>
+
+    <p>{{device.defaultCanAddress}} <br>
+      {{device.serialNumberString}}
+    </p>
+    <div *ngFor="let rele of device.DO" class="switch">
+      <label>
+        Rele {{rele.indice}}
+        <input [(ngModel)]="rele.value" (change)="changeStato($event,device,rele.indice,rele)" type="checkbox">
+        <span class="lever"></span>
+        {{rele.viewState}}
+      </label>
+    </div>
+  </li>
+  </ul>
+
+</div>

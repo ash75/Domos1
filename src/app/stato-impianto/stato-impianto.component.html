@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col s12">
+    <h3 class="text-center z-depth-1">
+      Stato Impianto
+    </h3>
+  </div>
+  <div class="divider"></div>
+  <div class="col s12">
+    <div class="col s3">
+      <div class="led-box ">
+        <div [ngClass]="statoImpiantoClass"></div>
+        <p>Sistema Domotica Connesso</p>
+      </div>
+    </div>
+    <div>
+      <div class="col s3">
+        <div class="led-box ">
+          <div [ngClass]="statoSerialeClass"></div>
+          <p>Seriale</p>
+        </div>
+        <button *ngIf="serialeChiusa" (click)="sendOpenSerial()" [ngClass]="cssBottoneGenerico"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Avvia comando connessione">Connetti
+        </button>
+      </div>
+    </div>
+    <!-- <div class="led-box">
+       <div class="led-yellow"></div>
+       <p>Yellow LED</p>
+     </div>
+     <div class="led-box">
+       <div class="led-red"></div>
+       <p>Red LED</p>
+     </div>-->
+  </div>
+
+  <div class="spacer col col-sm-12 col-md-12 col-lg-12"></div>
+</div>
+
+<div class="row">
+  <label>
+    <input type="text">
+  </label>
+</div>
+<app-lista-devices-domotica></app-lista-devices-domotica>

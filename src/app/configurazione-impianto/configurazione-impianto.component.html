@@ -1,0 +1,21 @@
+<p>
+  configurazione-impianto works!
+</p>
+<div class="row">
+<form  (ngSubmit)="onSubmit()" #heroForm="ngForm" class="col s12">
+  <div class="row">
+    <div class="input-field col s6">
+      <input [(ngModel)]="data.restEndPoint" name="restEndPoint" placeholder="Placeholder" id="end_server_rest" type="text" class="validate">
+      <label for="end_server_rest">End point Server</label>
+    </div>
+    <div class="input-field col s6">
+      <input [(ngModel)]="data.webSocketDomoticaEndPoint" name="webSocketDomoticaEndPoint" placeholder="Placeholder" id="end_server_socket" type="text" class="validate">
+      <label for="end_server_socket">End point WebSocket</label>
+    </div>
+  </div>
+
+   <div class="row">
+     <button class="pino-standard-button" type="submit">Salva</button>
+   </div>
+</form>
+</div>

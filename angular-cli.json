@@ -1,0 +1,69 @@
+{
+  "project": {
+    "version": "1.0.0-beta.17",
+    "name": "domotica-client-ui"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": "assets",
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+
+        "./css/animate.css",
+        "../node_modules/hover.css/css/hover-min.css",
+        "../node_modules/materialize-css/dist/css/materialize.css",
+        "../node_modules/tether/dist/css/tether.min.css",
+        "../node_modules/sweetalert2/dist/sweetalert2.min.css",
+        "custom.css",
+        "styles.css",
+        "../node_modules/toastr/build/toastr.min.css",
+        "../node_modules/highcharts/css/highcharts.css"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "./js/jquery.signalR-2.2.1.js",
+        "../node_modules/materialize-css/dist/js/materialize.min.js",
+        "../node_modules/tether/dist/js/tether.min.js",
+        "../node_modules/sweetalert2/dist/sweetalert2.min.js",
+        "../node_modules/toastr/build/toastr.min.js",
+        "../node_modules/pixi.js/bin/pixi.min.js",
+        "../node_modules/highcharts/js/highcharts.js",
+        "../node_modules/highcharts/js/highcharts-more.js"
+
+
+
+      ],
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false
+  }
+}
