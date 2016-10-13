@@ -30,6 +30,8 @@ export class DeviceBluetoothComponent implements OnInit, OnDestroy {
 
 
 
+
+
   ngOnInit() {
     this.devicesBluetooth = [];
   }
