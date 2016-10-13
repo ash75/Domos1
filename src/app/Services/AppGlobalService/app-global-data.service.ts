@@ -1,7 +1,7 @@
+import {BehaviorSubject} from '../../../../node_modules/rxjs/src/BehaviorSubject';
 import {AltaiBTDevice} from '../RESTClient/RESTClient';
-import { Injectable } from '@angular/core';
-import {Observable, Observer, BehaviorSubject} from "rxjs";
-import {LoggerService} from "../Logger/logger.service";
+import {Injectable} from '@angular/core';
+
 
 @Injectable()
 export class AppGlobalDataService {
@@ -16,9 +16,9 @@ export class AppGlobalDataService {
    */
   public setStatoConnessioneDomotica(value: boolean) {
 
-    //this._StatoConnessioneDomotica = value;
+
     this._StatoConnessioneDomotica.next(value);
-    //LoggerService.debug('Stato Connessione Domotica stato changed to '+value);
+
   }
 
   constructor() {
