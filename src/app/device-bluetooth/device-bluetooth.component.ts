@@ -1,4 +1,5 @@
-import {LoggerService} from '../Services/Logger/logger.service';
+import {AppGlobalDataService} from '../Services/AppGlobalService/app-global-data.service';
+import { LoggerService } from '../Services/Logger/logger.service';
 import { AltaiBTDevice } from '../Services/RESTClient/RESTClient';
 import { AltaiRestService } from '../Services/RESTClient/altai-rest.service';
 
@@ -20,15 +21,32 @@ export class DeviceBluetoothComponent implements OnInit, OnDestroy {
    * @memberOf DeviceBluetoothComponent
    */
   private devicesBluetooth: AltaiBTDevice[];
+  /**
+   * Creates an instance of DeviceBluetoothComponent.
+   * 
+   * @param {AltaiRestService} _rest
+   * 
+   * @memberOf DeviceBluetoothComponent
+   */
   constructor(private _rest: AltaiRestService) {
-    // TODO: Da implementare un evento per la gestione della ricezione dei devices
-    this._rest.DevicesBluetoothController.getDevices().toPromise().then((data) => {
-      this.devicesBluetooth = data;
-      LoggerService.debug('DeviceBluetoothComponent: Devices trovati: ' + data);
-    });
+
+
   }
 
 
+  /**
+   * Carica i devices bluetooth dal server
+   * 
+   * 
+   * @memberOf DeviceBluetoothComponent
+   */
+  caricaDevicesFromServer() {
+    this._rest.DevicesBluetoothController.getDevices().toPromise().then((data) => {
+      this.devicesBluetooth = data;
+      LoggerService.debug('DeviceBluetoothComponent: Devices trovati: ' + data);
+      AppGlobalDataService.DevicesBluetooth = data;
+    });
+  }
 
 
 
